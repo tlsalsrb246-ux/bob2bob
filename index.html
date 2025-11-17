@@ -1,46 +1,77 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>오늘의 좋은 글귀</title>
+<title>랜덤 명언</title>
 <style>
-    body { 
-        font-family: 'Pretendard', sans-serif; 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        height: 100vh; 
-        background: #faf7f0;
-        padding: 20px;
-        text-align: center;
-    }
-    .box {
-        background: white;
-        padding: 30px 40px;
-        border-radius: 20px;
-        box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
-        font-size: 1.5rem;
-        line-height: 2.2rem;
-        max-width: 600px;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Pretendard", sans-serif;
+    background: linear-gradient(135deg, #f8f9ff, #d8e3ff);
+  }
+  #box {
+    background: white;
+    padding: 50px 80px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 800px;
+  }
+  #quote {
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.5;
+  }
+  #btn {
+    margin-top: 40px;
+    padding: 15px 35px;
+    font-size: 22px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background: #5b7cff;
+    color: white;
+    font-weight: 600;
+    transition: 0.25s;
+  }
+  #btn:hover {
+    background: #3d5bff;
+    transform: translateY(-3px);
+  }
 </style>
 </head>
+
 <body>
-<div class="box" id="quote"></div>
+<div id="box">
+  <div id="quote">✨ 클릭하면 오늘의 랜덤 문구가 나타납니다 ✨</div>
+  <button id="btn" onclick="newQuote()">다시 뽑기</button>
+</div>
 
 <script>
-const quotes = [
-    "지난 한 해의 어려움은 내일을 밝히는 등불이 된다.",
-    "오늘의 작은 선택이 내일의 큰 변화를 만든다.",
-    "새로운 시작은 언제나 두려움의 끝에서 피어난다.",
-    "나를 믿어주는 단 한 사람이 있다면, 그건 바로 ‘나’ 자신이다.",
-    "감사는 지나간 날을 빛나게 하고, 희망은 다가올 날을 따뜻하게 한다.",
-    "천천히 가도 괜찮다. 멈추지 않는 것이 중요하다.",
-    "올해도 수고 많았다. 내년엔 더 빛나자."
-];
+  const quotes = [
+    "오늘도 수고했어 🍀",
+    "너는 잘하고 있어.",
+    "기적은 노력하는 사람에게 온다.",
+    "불가능은 결국 가능으로 변한다.",
+    "작은 한 걸음이 큰 변화를 만든다.",
+    "네가 가는 길을 응원해.",
+    "걱정하지 마, 다 잘 될 거야.",
+    "한번 시작했으면 끝까지 가보자!",
+    "오늘의 너는 어제의 너보다 성장했다.",
+    "포기하지 않는다면 실패는 없다."
+  ];
 
-document.getElementById("quote").innerText =
-    quotes[Math.floor(Math.random() * quotes.length)];
+  function newQuote() {
+    const idx = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").innerText = quotes[idx];
+  }
 </script>
 </body>
 </html>
