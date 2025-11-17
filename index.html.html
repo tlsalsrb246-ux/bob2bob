@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>오늘의 좋은 글귀</title>
+<style>
+    body { 
+        font-family: 'Pretendard', sans-serif; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+        background: #faf7f0;
+        padding: 20px;
+        text-align: center;
+    }
+    .box {
+        background: white;
+        padding: 30px 40px;
+        border-radius: 20px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+        max-width: 600px;
+    }
+</style>
+</head>
+<body>
+<div class="box" id="quote"></div>
+
+<script>
+const quotes = [
+    "지난 한 해의 어려움은 내일을 밝히는 등불이 된다.",
+    "오늘의 작은 선택이 내일의 큰 변화를 만든다.",
+    "새로운 시작은 언제나 두려움의 끝에서 피어난다.",
+    "나를 믿어주는 단 한 사람이 있다면, 그건 바로 ‘나’ 자신이다.",
+    "감사는 지나간 날을 빛나게 하고, 희망은 다가올 날을 따뜻하게 한다.",
+    "천천히 가도 괜찮다. 멈추지 않는 것이 중요하다.",
+    "올해도 수고 많았다. 내년엔 더 빛나자."
+];
+
+document.getElementById("quote").innerText =
+    quotes[Math.floor(Math.random() * quotes.length)];
+</script>
+</body>
+</html>
